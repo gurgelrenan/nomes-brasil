@@ -26,4 +26,4 @@ export const averageIncomes = [
   {uf: 'Mato Grosso', value:	'1.525,61'},
   {uf: 'Goiás', value:	'1.468,78'},
   {uf: 'Distrito Federal', value:	'1.807,67'}
-];
+].sort(((a, b) => (a.uf > b.uf) ? 1 : -1));
