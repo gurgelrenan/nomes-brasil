@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/salary-overview/static/js/main.02f27b62.chunk.js",
+    "main.js.map": "/salary-overview/static/js/main.02f27b62.chunk.js.map",
+    "runtime-main.js": "/salary-overview/static/js/runtime-main.6400faec.js",
+    "runtime-main.js.map": "/salary-overview/static/js/runtime-main.6400faec.js.map",
+    "static/js/2.4683cd1c.chunk.js": "/salary-overview/static/js/2.4683cd1c.chunk.js",
+    "static/js/2.4683cd1c.chunk.js.map": "/salary-overview/static/js/2.4683cd1c.chunk.js.map",
+    "index.html": "/salary-overview/index.html",
+    "precache-manifest.ac319b038ac41757e165c0202f4daeed.js": "/salary-overview/precache-manifest.ac319b038ac41757e165c0202f4daeed.js",
+    "service-worker.js": "/salary-overview/service-worker.js",
+    "static/js/2.4683cd1c.chunk.js.LICENSE.txt": "/salary-overview/static/js/2.4683cd1c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6400faec.js",
+    "static/js/2.4683cd1c.chunk.js",
+    "static/js/main.02f27b62.chunk.js"
+  ]
+}
