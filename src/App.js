@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import ProTip from './ProTip';
 import { averageIncomes } from './data';
-import SalaryTable from './components/salary-table.component';
+import SalaryTable from './components/salary-table/salary-table.component';
 
 function Copyright() {
   return (
