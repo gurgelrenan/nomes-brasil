@@ -5,8 +5,6 @@ import { averageIncomes } from './data';
 import SalaryTable from './components/salary-table/salary-table.component';
 import searchNames from './components/search-names/search-names.component';
 
-
-
 export default function App() {
   return (
     <div>
