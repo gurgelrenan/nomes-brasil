@@ -10,7 +10,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 
 function Copyright() {
   return (
@@ -33,7 +32,7 @@ const SalaryTable = ({ props }) => {
         <Typography variant="h4" component="h1" gutterBottom>
           Média Salarial Brasileira
       </Typography>
-        <TableContainer component={Paper}>
+        <TableContainer>
           <Table aria-label="simple table">
             <TableHead>
               <TableRow>
