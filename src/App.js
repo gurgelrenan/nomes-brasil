@@ -10,12 +10,12 @@ export default function App() {
     <div>
       <Switch>
         <Route exact
-          path='/'
+          path='/salaries'
           render={() => (
             <SalaryTable props={averageIncomes} />
           )}
         />
-        <Route path='/names' component={searchNames} />
+        <Route path='/' component={searchNames} />
       </Switch>
     </div>
   );
