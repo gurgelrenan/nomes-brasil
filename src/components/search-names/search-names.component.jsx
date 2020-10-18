@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Header from '../header/header.component';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,6 +52,7 @@ const SearchNames = () => {
 
   return (
     <div className={classes.root}>
+      <Header />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <h1>Nomes do Brasil</h1>
