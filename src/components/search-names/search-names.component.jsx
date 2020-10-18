@@ -7,7 +7,6 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
@@ -20,20 +19,32 @@ const useStyles = makeStyles((theme) => ({
 const SearchNames = () => {
   const [name, setName] = useState('');
   const [nameData, setNameData] = useState({ nome: '', sexo: null, localidade: '', res: [] });
+  const [errorMessage, setErrorMessage] = useState('');
 
-  async function fetchData(e) {
-    e.preventDefault();
-
+  const fetchData = async () => {
     if (name === '') return;
 
     try {
       const result = await axios(
         `https://servicodados.ibge.gov.br/api/v2/censos/nomes/${name}`
       );
-      setNameData(result.data[0]);
+      
+      if (Array.isArray(result.data) && result.data.length) {
+        setNameData(result.data[0]);
+        setErrorMessage('');
+      } else {
+        setErrorMessage(`Não existe resultados para o nome: ${name}`)
+      }
+      
     } catch (error) {
       console.log('error:', error.message);
     }
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    fetchData();
   }
 
   const classes = useStyles();
@@ -43,7 +54,7 @@ const SearchNames = () => {
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <h1>Nomes do Brasil</h1>
-          <form onSubmit={(e) => fetchData(e)}>
+          <form onSubmit={(e) => handleSubmit(e)}>
             <TextField
               label="Digite um nome"
               variant="outlined"
@@ -51,6 +62,7 @@ const SearchNames = () => {
             />
             <Button variant="contained" size="medium" type="submit">Buscar</Button>
           </form>
+          <span>{errorMessage}</span>
         </Grid>
       </Grid>
 
