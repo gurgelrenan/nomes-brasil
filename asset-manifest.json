@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/salary-overview/static/js/main.dd802bbf.chunk.js",
-    "main.js.map": "/salary-overview/static/js/main.dd802bbf.chunk.js.map",
-    "runtime-main.js": "/salary-overview/static/js/runtime-main.6400faec.js",
-    "runtime-main.js.map": "/salary-overview/static/js/runtime-main.6400faec.js.map",
-    "static/js/2.e7b08e00.chunk.js": "/salary-overview/static/js/2.e7b08e00.chunk.js",
-    "static/js/2.e7b08e00.chunk.js.map": "/salary-overview/static/js/2.e7b08e00.chunk.js.map",
-    "index.html": "/salary-overview/index.html",
-    "precache-manifest.f767151820bcdf804debbfc2193580ab.js": "/salary-overview/precache-manifest.f767151820bcdf804debbfc2193580ab.js",
-    "service-worker.js": "/salary-overview/service-worker.js",
-    "static/js/2.e7b08e00.chunk.js.LICENSE.txt": "/salary-overview/static/js/2.e7b08e00.chunk.js.LICENSE.txt"
+    "main.js": "/nomes-brasil/static/js/main.594293e6.chunk.js",
+    "main.js.map": "/nomes-brasil/static/js/main.594293e6.chunk.js.map",
+    "runtime-main.js": "/nomes-brasil/static/js/runtime-main.54fc12c6.js",
+    "runtime-main.js.map": "/nomes-brasil/static/js/runtime-main.54fc12c6.js.map",
+    "static/js/2.188a1ec9.chunk.js": "/nomes-brasil/static/js/2.188a1ec9.chunk.js",
+    "static/js/2.188a1ec9.chunk.js.map": "/nomes-brasil/static/js/2.188a1ec9.chunk.js.map",
+    "index.html": "/nomes-brasil/index.html",
+    "precache-manifest.7ddb296812f0c9f9400bc90cf2554961.js": "/nomes-brasil/precache-manifest.7ddb296812f0c9f9400bc90cf2554961.js",
+    "service-worker.js": "/nomes-brasil/service-worker.js",
+    "static/js/2.188a1ec9.chunk.js.LICENSE.txt": "/nomes-brasil/static/js/2.188a1ec9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6400faec.js",
-    "static/js/2.e7b08e00.chunk.js",
-    "static/js/main.dd802bbf.chunk.js"
+    "static/js/runtime-main.54fc12c6.js",
+    "static/js/2.188a1ec9.chunk.js",
+    "static/js/main.594293e6.chunk.js"
   ]
 }
