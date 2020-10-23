@@ -7,15 +7,8 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Header from '../header/header.component';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  }
-}));
 
 const SearchNames = () => {
   const [name, setName] = useState('');
@@ -48,12 +41,10 @@ const SearchNames = () => {
     fetchData();
   }
 
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
+    <div>
       <Header />
-      <Grid container spacing={3}>
+      <Grid container>
         <Grid item xs={12}>
           <h1>Nomes do Brasil</h1>
           <form onSubmit={(e) => handleSubmit(e)}>
