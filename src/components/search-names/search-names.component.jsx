@@ -7,8 +7,25 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 import Header from '../header/header.component';
+import Link from '@material-ui/core/Link';
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://github.com/gurgelrenan/salary-overview">
+        @gurgelrenan
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 const SearchNames = () => {
   const [name, setName] = useState('');
@@ -44,9 +61,17 @@ const SearchNames = () => {
   return (
     <div>
       <Header />
-      <Grid container>
+      <Container component="main">
+        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+          Nomes do Brasil
+        </Typography>
+        <Typography variant="h5" align="center" color="textSecondary" component="p">
+          Será que você tem um nome popular?
+        </Typography>
+      </Container>
+
+      <Container component="main">
         <Grid item xs={12}>
-          <h1>Nomes do Brasil</h1>
           <form onSubmit={(e) => handleSubmit(e)}>
             <TextField
               label="Digite um nome"
@@ -57,9 +82,7 @@ const SearchNames = () => {
           </form>
           <span>{errorMessage}</span>
         </Grid>
-      </Grid>
 
-      <Grid container>
         <Grid item xs={12}>
           {nameData.nome}<br />
           {nameData.sexo}<br />
@@ -83,7 +106,13 @@ const SearchNames = () => {
             </TableBody>
           </Table>
         </Grid>
-      </Grid>
+      </Container>
+
+      <Container component="footer">
+        <Box mt={5}>
+          <Copyright />
+        </Box>
+      </Container>
     </div>
   );
 };

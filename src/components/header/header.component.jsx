@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography className={classes.typographyStyles}>Nomes do brasil</Typography>
+        <Typography className={classes.typographyStyles}>@gurgelrenan</Typography>
       </Toolbar>
     </AppBar>
   );
