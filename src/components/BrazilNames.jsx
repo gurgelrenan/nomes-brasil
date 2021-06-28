@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid'
+import TextField from '@material-ui/core/TextField';
 import axios from 'axios'
 
 const BrazilNames = () => {
   const [name, setName] = useState('')
-  const [namesQuery, setNamesQuery] = useState({ nome: '', sexo: null, localidade: '', res: [] })
+  const [data, setData] = useState({ nome: '', sexo: null, localidade: '', res: [] })
   const [errorMessage, setErrorMessage] = useState('')
 
   const fetchData = async () => {
@@ -15,10 +18,10 @@ const BrazilNames = () => {
       );
       
       if (Array.isArray(result.data) && result.data.length) {
-        setNamesQuery(result.data[0]);
+        setData(result.data[0]);
       } else {
         setErrorMessage(`Não existe resultados para o nome: ${name}`)
-        setNamesQuery({ nome: '', sexo: null, localidade: '', res: [] })
+        setData({ nome: '', sexo: null, localidade: '', res: [] })
       }
       
     } catch (error) {
@@ -33,21 +36,36 @@ const BrazilNames = () => {
   }
 
   return (
-    <div>
-      <h2>Nomes do Brasil</h2>
-
+    <div style={{paddingTop: 20}}>
       <div>
         <span>{errorMessage}</span>
         <form onSubmit={(e) => handleSubmit(e)}>
-          <input type="text" name="name" placeholder="Digite o nome" value={name} onChange={(e) => setName(e.target.value)} />
-          <input type="submit" value="Buscar" />
+          <Grid container justify="center">
+            <Grid item>
+              <TextField
+                name="name"
+                required
+                label="Nome"
+                autoFocus
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+            </Grid>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+            >
+              Buscar
+            </Button>
+          </Grid>
         </form>
       </div>
 
       <div>
-        <p>Localidade: {namesQuery.localidade}</p>
-        <p>Nome: {namesQuery.nome}</p>
-        {namesQuery.res.map(({periodo, frequencia}) =>
+        <p>Localidade: {data.localidade}</p>
+        <p>Nome: {data.nome}</p>
+        {data.res.map(({periodo, frequencia}) =>
           <p>{periodo} - {frequencia}</p>
         )}
       </div>
