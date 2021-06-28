@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField';
-import axios from 'axios'
+import axios from 'axios';
+import { formatData } from '../lib/utils';
 
 const BrazilNames = () => {
   const [name, setName] = useState('')
@@ -18,7 +19,8 @@ const BrazilNames = () => {
       );
       
       if (Array.isArray(result.data) && result.data.length) {
-        setData(result.data[0]);
+        const formatedData = formatData(result.data[0]);
+        setData(formatedData);
       } else {
         setErrorMessage(`Não existe resultados para o nome: ${name}`)
         setData({ nome: '', sexo: null, localidade: '', res: [] })
@@ -63,11 +65,12 @@ const BrazilNames = () => {
       </div>
 
       <div>
-        <p>Localidade: {data.localidade}</p>
-        <p>Nome: {data.nome}</p>
-        {data.res.map(({periodo, frequencia}) =>
+        {/* <p>Localidade: {data.localidade}</p>
+        <p>Nome: {data.nome}</p> */}
+        {/* {data.res.map((row) =>
+          
           <p>{periodo} - {frequencia}</p>
-        )}
+        )} */}
       </div>
     </div>
   )
