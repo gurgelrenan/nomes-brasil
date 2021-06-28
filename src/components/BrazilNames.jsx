@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 import axios from 'axios';
 import { formatData } from '../lib/utils';
 
@@ -64,14 +65,17 @@ const BrazilNames = () => {
         </form>
       </div>
 
-      <div>
-        {/* <p>Localidade: {data.localidade}</p>
-        <p>Nome: {data.nome}</p> */}
-        {/* {data.res.map((row) =>
-          
-          <p>{periodo} - {frequencia}</p>
-        )} */}
-      </div>
+      <Grid container justify="center">
+        <Grid item>
+          <LineChart width={800} height={600} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+            <Line type="monotone" dataKey="frequencia" stroke="#8884d8" />
+            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+            <XAxis dataKey="year" />
+            <YAxis />
+            <Tooltip />
+          </LineChart>
+        </Grid>
+      </Grid>
     </div>
   )
 }

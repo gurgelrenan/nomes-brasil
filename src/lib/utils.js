@@ -3,11 +3,11 @@ const convertYearToInteger = interval => {
 }
 
 export const formatData = (data) => {
-  let periods = data.res;
-  let result = []
+  const result = []
 
-  periods.map(({periodo, frequencia}) => {
+  data.res.forEach(({periodo, frequencia}) => {
     let year = convertYearToInteger(periodo)
+
     result.push({year, frequencia})
   })
 
